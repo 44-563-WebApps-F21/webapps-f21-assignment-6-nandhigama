@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic</title>
+    </head>
+ 
+<body>
+
+<h2>Nandhigama PrasannaKumar Computes</h2>
+
+<form>
+    <label for="eb">Enter a Base</label>
+    <input type ="number" id="eb" name="eb" value="10"> <br>
+
+    <label for="ee">Enter an Exponent</label>
+    <input type ="text" id="ee" name="ee" value="2"> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+<p id="result">This text will be replaced </p>
+
+<div onclick="processRadio()">
+    <input type="radio" id="plus" value="plus" name="operation">
+    <label>+</label><br>
+    <input type="radio" id="minus" value="minus" name="operation">
+    <label>-</label><br>
+    <input type="radio" id="times" value="times" name="operation">
+    <label>*</label><br>
+    <input type="radio" id="divide" value="divide" name="operation">
+    <label>/</label>
+</div>
+
+
+<p id="result1">This text will be replaced </p>
+
+<script> 
+    function powers()
+    {
+        pras=""
+        E_B=document.getElementById("eb").value
+        E_E=document.getElementById("ee").value
+        out=document.getElementById("result")
+        for(i=1;i<=E_E;i++)
+        {
+            pras=pras+Math.pow(E_B, i)+" "
+
+        }
+        out.innerHTML=pras;
+
+    }
+
+    function processRadio()
+    {
+        EB1=document.getElementById("eb").value
+        EE1=document.getElementById("ee").value
+        out1=document.getElementById("result1")
+        if(document.getElementById("plus").checked)
+        {
+            out1.innerHTML=Number(EB1)+Number(EE1)
+        }
+        if(document.getElementById("minus").checked)
+        {
+            out1.innerHTML=EB1-EE1
+        }
+        if(document.getElementById("times").checked)
+        {
+            out1.innerHTML=EB1*EE1
+        }
+        if(document.getElementById("divide").checked)
+        {
+            out1.innerHTML=EB1/EE1
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html> 

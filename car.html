@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Car</title>
+    </head>
+    <body>
+        <form>
+            <input type="radio" id="elec" name="operation" value="electrical">
+            <label>Electric</label><br>
+            <input type="radio" id="ac" name="operation" value="ac">
+            <label>AC</label><br>
+            <input type="radio" id="gps" name="operator" value="gps">
+            <label>GPS</label><br>
+            <input type="button" onclick="orderCar()" value="Order a car">
+
+            <p id="res">Output</p>
+        </form>
+        <label>Enter a Property</label>
+        <input type="text" id="ep" value="color" name="ep"><br>
+        <label>Enter a Value</label>
+        <input type="text" id="va" value="property" name="va"><br>
+        <input type="button" value="Update the Car" onclick="updateCar()">
+        <p id="res1">Output</p>
+        <form>
+
+        </form>
+        <script>
+            my_car={}
+
+            function orderCar()
+            {
+                E1=document.getElementById("elec")
+                A=document.getElementById("ac")
+                gp=document.getElementById("gps")
+                out=document.getElementById("res")
+
+                my_car={
+                    elec:false,ac:false,gps:false
+                };
+
+                my_car.elec=E1.checked
+                    my_car.ac=A.checked
+                    my_car.gps=gp.checked
+
+                    out.innerHTML=Object.values(my_car);
+            }
+
+            function updateCar()
+            {
+                my_car.property=document.getElementById("ep").value;
+                my_car.value=document.getElementById("va").value;
+                RES=document.getElementById("res1").innerHTML=Object.values(my_car)
+            }
+        </script>
+    </body>
+</html>

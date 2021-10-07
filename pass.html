@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            functions and elements</title>
+    </head>
+ 
+<body>
+<h2>"Pass Phrase by" PrasannaKumar Nandhigama</h2>
+
+<form>
+    <label for="form1_age">Enter the Secret Phrase</label>
+    <input type ="password" id="esp" name="esp" value="Let Me In"> <br>
+
+    <label for="form1_nick">Enter the Phrase</label>
+    <input type ="text" id="ep" name="ep" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the Phrase">
+</form>
+<div>
+    <img src="Northern Short-tailed Shrew.jpg" alt="Shrew" width="200" height="200" id="img1" onclick="newImage()">
+</div>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+    correct=0
+    wrong=0
+    usingImage=1
+
+    function processPhrase()
+    {
+        E_SP=document.getElementById("esp").value
+        E_P=document.getElementById("ep").value
+
+        out=document.getElementById("result")
+
+        if(E_SP==E_P)
+        {
+            correct=correct+1
+            alert("Access is allowed")
+        }
+        else{
+            wrong=wrong+1
+            alert("Access is denied")
+        }
+
+        out.innerHTML="Correct: "+correct+" "+"Wrong: "+wrong;
+    }
+
+    function newImage()
+    {
+        switch(usingImage)
+        {
+            case 1:
+            document.getElementById("img1").src="Northern Short-tailed Shrew.jpg"
+            usingImage=usingImage+1
+            break
+
+            case 2:
+                document.getElementById("img1").src="Nurse Shark.jpg"
+                usingImage=usingImage+1
+                break
+            case 3:
+                document.getElementById("img1").src="Alligator.jpg"
+                usingImage=1
+                break
+        }
+        
+    }
+</script>
+
+
+</body>
+</html> 
